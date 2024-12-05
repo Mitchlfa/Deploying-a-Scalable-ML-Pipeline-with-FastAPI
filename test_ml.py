@@ -8,7 +8,8 @@ def test_train_model():
     X_train = np.array([[0, 1], [1, 0], [0, 0], [1, 1]])  # Sample training data
     y_train = np.array([0, 1, 0, 1])  # Sample labels
     model = train_model(X_train, y_train)
-    assert isinstance(model, RandomForestClassifier), "Model is not of type RandomForestClassifier"
+    assert isinstance(model, RandomForestClassifier
+                      ), "Model not type RandomForestClassifier"
 
 
 # Test if the model uses the expected algorithm (RandomForestClassifier)
@@ -16,7 +17,8 @@ def test_model_algorithm():
     X_train = np.array([[0, 1], [1, 0], [0, 0], [1, 1]])  # Sample training data
     y_train = np.array([0, 1, 0, 1])  # Sample labels
     model = train_model(X_train, y_train)
-    assert isinstance(model, RandomForestClassifier), "Model is not a RandomForestClassifier"
+    assert isinstance(model, RandomForestClassifier
+                      ), "Model is not a RandomForestClassifier"
 
 
 # Test if compute_model_metrics returns the expected values

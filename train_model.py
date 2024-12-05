@@ -1,5 +1,4 @@
 import os
-import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
@@ -13,7 +12,7 @@ from ml.model import (
     train_model,
 )
 # TODO: load the cencus.csv data
-project_path = os.path.dirname(os.path.abspath(__file__))  # Gets the current directory
+project_path = os.path.dirname(os.path.abspath(__file__))
 data_path = os.path.join(project_path, "data", "census.csv")
 print(data_path)
 data = pd.read_csv(data_path)
@@ -91,5 +90,6 @@ for col in cat_features:
             model=model,
         )
         with open("slice_output.txt", "a") as f:
-            print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}", file=f)
+            print(f"Precision: {p:.4f} | Recall: {r:.4f} | F1: {fb:.4f}",
+                  file=f)
             print(f"{col}: {slicevalue}, Count: {count:,}", file=f)

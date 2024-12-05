@@ -68,7 +68,8 @@ async def post_inference(data: Data):
         print(f"Warning: Missing columns in input data: {missing_cols}")
 
     # Ensure data is passed correctly to the process_data function
-    data_processed, _, _, _ = process_data(data, categorical_features=cat_features,
+    data_processed, _, _, _ = process_data(data,
+                                           categorical_features=cat_features,
                                            training=False, encoder=encoder)
 
     # Run the model prediction
