@@ -4,22 +4,21 @@ r = requests.get("http://127.0.0.1:8000/")
 print(f"GET Status Code: {r.status_code}")
 print(f"Welcome Message: {r.json()}")
 
-# Data with correct field names that match the aliases in main.py
 data = {
     "age": 37,
     "workclass": "Private",
     "fnlgt": 178356,
     "education": "HS-grad",
-    "education-num": 10,  
-    "marital-status": "Married-civ-spouse",  # Match the alias defined in main.py
+    "education-num": 10,
+    "marital-status": "Married-civ-spouse",
     "occupation": "Prof-specialty",
     "relationship": "Husband",
     "race": "White",
     "sex": "Male",
-    "capital-gain": 0,  # Match the alias defined in main.py
-    "capital-loss": 0,  # Match the alias defined in main.py
-    "hours-per-week": 40,  # Match the alias defined in main.py
-    "native-country": "United-States",  # Match the alias defined in main.py
+    "capital-gain": 0,
+    "capital-loss": 0,
+    "hours-per-week": 40,
+    "native-country": "United-States",
 }
 
 # Send a POST request with the data above

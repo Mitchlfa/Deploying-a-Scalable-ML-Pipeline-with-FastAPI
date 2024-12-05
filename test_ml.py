@@ -1,8 +1,7 @@
-import pytest
 from sklearn.ensemble import RandomForestClassifier
 from ml.model import train_model, compute_model_metrics
-from sklearn.metrics import precision_score, recall_score, fbeta_score
 import numpy as np
+
 
 # Test if train_model function returns a model of type RandomForestClassifier
 def test_train_model():

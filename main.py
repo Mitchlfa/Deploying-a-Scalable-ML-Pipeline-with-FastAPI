@@ -58,7 +58,7 @@ async def post_inference(data: Data):
 
     # Ensure the data contains the expected categorical and numerical features
     cat_features = [
-        "workclass", "education", "marital-status", "occupation", 
+        "workclass", "education", "marital-status", "occupation",
         "relationship", "race", "sex", "native-country"
     ]
 
@@ -66,9 +66,10 @@ async def post_inference(data: Data):
     missing_cols = [col for col in cat_features if col not in data.columns]
     if missing_cols:
         print(f"Warning: Missing columns in input data: {missing_cols}")
-    
+
     # Ensure data is passed correctly to the process_data function
-    data_processed, _, _, _ = process_data(data, categorical_features=cat_features, training=False, encoder=encoder)
+    data_processed, _, _, _ = process_data(data, categorical_features=cat_features,
+                                           training=False, encoder=encoder)
 
     # Run the model prediction
     _inference = model.predict(data_processed)
