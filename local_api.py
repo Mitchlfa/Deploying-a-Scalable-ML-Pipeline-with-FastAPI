@@ -1,34 +1,32 @@
+import requests
 
-# TODO: send a GET using the URL http://127.0.0.1:8000
-r = None  # Your code here
+r = requests.get("http://127.0.0.1:8000/")
+print(f"GET Status Code: {r.status_code}")
+print(f"Welcome Message: {r.json()}")
 
-# TODO: print the status code
-# print()
-# TODO: print the welcome message
-# print()
-
-
+# Data with correct field names that match the aliases in main.py
 data = {
     "age": 37,
     "workclass": "Private",
     "fnlgt": 178356,
     "education": "HS-grad",
-    "education-num": 10,
-    "marital-status": "Married-civ-spouse",
+    "education-num": 10,  
+    "marital-status": "Married-civ-spouse",  # Match the alias defined in main.py
     "occupation": "Prof-specialty",
     "relationship": "Husband",
     "race": "White",
     "sex": "Male",
-    "capital-gain": 0,
-    "capital-loss": 0,
-    "hours-per-week": 40,
-    "native-country": "United-States",
+    "capital-gain": 0,  # Match the alias defined in main.py
+    "capital-loss": 0,  # Match the alias defined in main.py
+    "hours-per-week": 40,  # Match the alias defined in main.py
+    "native-country": "United-States",  # Match the alias defined in main.py
 }
 
-# TODO: send a POST using the data above
-r = None  # Your code here
+# Send a POST request with the data above
+r = requests.post("http://127.0.0.1:8000/data/", json=data)
 
-# TODO: print the status code
-# print()
-# TODO: print the result
-# print()
+# Print the status code
+print(f"POST Status Code: {r.status_code}")
+
+# Print the result from the POST request
+print(f"Result: {r.json()}")
