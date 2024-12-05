@@ -5,7 +5,7 @@ import numpy as np
 
 # Test if train_model function returns a model of type RandomForestClassifier
 def test_train_model():
-    X_train = np.array([[0, 1], [1, 0], [0, 0], [1, 1]])  # Sample training data
+    X_train = np.array([[0, 1], [1, 0], [0, 0], [1, 1]])
     y_train = np.array([0, 1, 0, 1])  # Sample labels
     model = train_model(X_train, y_train)
     assert isinstance(model, RandomForestClassifier
@@ -14,7 +14,7 @@ def test_train_model():
 
 # Test if the model uses the expected algorithm (RandomForestClassifier)
 def test_model_algorithm():
-    X_train = np.array([[0, 1], [1, 0], [0, 0], [1, 1]])  # Sample training data
+    X_train = np.array([[0, 1], [1, 0], [0, 0], [1, 1]])
     y_train = np.array([0, 1, 0, 1])  # Sample labels
     model = train_model(X_train, y_train)
     assert isinstance(model, RandomForestClassifier
